@@ -1,0 +1,72 @@
+{
+  "name": "bloodshare",
+  "version": "0.0.0",
+  "description": "An app built on Angular2 (mean), interfacing with arcGIS map services",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "test": "tsc",
+    "webpack:w": "webpack --watch",
+    "start": "node server.js",
+    "postinstall": "typings install",
+    "webpack": "webpack",
+    "typings": "typings"
+  },
+  "keywords": [
+    "Angular2",
+    "Esri"
+  ],
+  "author": "Tom Wayson <tom@tomwayson.com>/moaz korena <moazkorena@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/common": "2.0.0-rc.6",
+    "@angular/compiler": "2.0.0-rc.6",
+    "@angular/core": "2.0.0-rc.6",
+    "@angular/forms": "2.0.0-rc.6",
+    "@angular/http": "2.0.0-rc.6",
+    "@angular/platform-browser": "2.0.0-rc.6",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.6",
+    "@angular/router": "3.0.0-rc.1",
+    "@angular/router-deprecated": "2.0.0-rc.2",
+    "@angular/upgrade": "2.0.0-rc.5",
+    "angular2-template-loader": "^0.5.0",
+    "babel-register": "^6.14.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "copy-webpack-plugin": "^3.0.1",
+    "core-js": "^2.4.0",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "html-loader": "^0.4.3",
+    "http": "0.0.0",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.4.19",
+    "morgan": "^1.7.0",
+    "named-routes": "^2.0.6",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "5.0.0-beta.11",
+    "socket.io": "^1.4.6",
+    "webpack-merge": "^0.14.1",
+    "zone.js": "^0.6.12"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "ts-loader": "^0.8.2",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4",
+    "webpack": "^1.13.1",
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.9.0",
+    "babel-runtime": "^6.9.2"
+  }
+}

@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>Bloodshare</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--load styles-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="//js.arcgis.com/3.16/esri/themes/calcite/dijit/calcite.css">
+    <link rel="stylesheet" href="//js.arcgis.com/3.16/esri/themes/calcite/esri/esri.css">
+    <link rel="stylesheet"  href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/main.css">
+    
+    <!-- 1. Configure and load ESRI libraries -->
+    <script>
+      window.dojoConfig = {
+        async: true
+      };
+
+      var dojoConfig = {
+        parseOnLoad:true,
+        packages: [{
+          "name": "myModules",
+          "location": location.pathname.replace(/\/[^/]+$/, "") + "/myModules"
+        }]
+      };
+      
+    </script>
+    <script src="https://js.arcgis.com/3.16/"></script>
+
+    <!-- Load webpack bundles-->
+    <script>
+      require(["/vendor.bundle.js", "/main.bundle.js"], function (vendor, main) {});
+    </script>
+  </head>
+
+  <!-- 3. Display the application -->
+  <body class="calcite">
+    <div class="container-fluid">
+      <my-app>Loading...</my-app>
+    </div>
+  </body>  
+</html>

@@ -1,0 +1,50 @@
+<div   class="container" style="width: 100%; 
+padding: 0;">
+    <div *ngIf="activated">
+        <h4>New Donor Entry</h4>
+        <form (ngSubmit)="onSubmit()" #donorForm="ngForm"  >
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" class="form-control" id="first_name" [(ngModel)]="model.first_name" name="first_name" required #first_name="ngModel">
+                <div [hidden]="first_name.valid || first_name.pristine" class="alert alert-danger">
+                    First Name is required
+                </div>
+                <label for="last_name">Last Name</label>
+                <input type="text" class="form-control" id="last_name" [(ngModel)]="model.last_name" name="last_name" #last_name="ngModel" required>
+                <div [hidden]="last_name.valid || last_name.pristine" class="alert alert-danger">
+                    Last Name is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="blood_group">Blood Group</label>
+                <select class="form-control" id="blood_group" required [(ngModel)]="model.blood_group" #blood_group="ngModel" name="blood_group">
+                    <option *ngFor="let group of groups" [value]="group">{{group}}</option>
+                </select>
+                <div [hidden]="blood_group.valid || blood_group.pristine" class="alert alert-danger">
+                    Blood Group is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="contact_number">Contact Number</label>
+                <input type="text" class="form-control" id="contact_number" [(ngModel)]="model.contact_number" name="contact_number" required #contact_number="ngModel" placeholder="(xxxx-xxx-xxxx)" pattern="^\d{4}-\d{3}-\d{4}$">
+                <div [hidden]="contact_number.valid || contact_number.pristine" class="alert alert-danger">
+                    Contact number is invalid
+                </div>
+                <label for="email_address">Email Address</label>
+                <input type="text" class="form-control" id="email_address" [(ngModel)]="model.email_address" name="email_address" #email_address="ngModel" 
+                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                <div [hidden]="email_address.valid || email_address.pristine" class="alert alert-danger">
+                    Email Address is invalid
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="longitude">Longitude</label>
+                <input type="text" class="form-control" id="longitude" [(ngModel)]="model.longitude" name="longitude" required readonly="true">
+                <label for="latitude">Latitude</label>
+                <input type="text" class="form-control" id="latitude" [(ngModel)]="model.latitude" name="latitude" required readonly="true">
+            </div>
+            <input type="submit" class="btn btn-default" [disabled]="!donorForm.form.valid" value="Submit" />
+            <button class="btn btn-default" (click)="submitted=false">Clear</button>
+        </form>
+    </div>
+</div>

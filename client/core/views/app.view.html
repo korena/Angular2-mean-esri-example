@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-sm-8 col-md-9 col-lg-10 map-col">
+        <esri-map [itemId]="itemId" [options]="mapOptions" [locationOptions]="locationOptions" (mapLoaded)="onMapLoad($event)" (onLocationClicked)="onLocationClicked($event)" (onCreateFeature)="onDonorFeatureCreate($event)">
+            <esri-search [options]="searchOptions"></esri-search>
+        </esri-map>
+    </div>
+    <div class="col-sm-4 col-md-3 col-lg-2 form-col">
+        <div [hidden]="!showMessage">
+            <div class="alert" style="overflow:hidden">
+                <p style="text-align: center;">{{messages}}</p>
+                <div style="word-break: break-all;">
+                    <a [hidden]="!showLink" href="{{link}}">{{link}}</a>
+                </div>
+            </div>
+        </div>
+        <donor-form (donorModel)="onFormSubmit($event)" (onDonorModelPersisted)="onDonorPersisted($event)"></donor-form>
+    </div>
+</div>
