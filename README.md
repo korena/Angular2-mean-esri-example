@@ -89,10 +89,18 @@ typings (tested with  1.3.3)
 
 # How to compile and run
 
+to install typings:
+
+```bash
+$ typings install --global github:Esri/jsapi-resources/3.x/typescript/arcgis-js-api.d.ts; \
+  typings  install --global --save dt~dojo \
+  typings  install --global --save dt~core-js
+```
+
 in root directory:
 
 ```bash
-npm install ; npm run webpack:w ; npm start 
+$ npm install ; npm run webpack:w ; npm start 
 ```
 in browser: 
 visit http:localhost:3000
